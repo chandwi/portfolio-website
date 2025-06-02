@@ -1,0 +1,76 @@
+/* Global Styles */
+:root {
+  --primary: #0A9396;
+  --secondary: #FFD6A5;
+  --accent: #f48fb1;
+  --dark: #212529;
+  --light: #F8F9FA;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: #f864c4;
+}
+
+.btn-secondary {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: #1a1e21;
+}

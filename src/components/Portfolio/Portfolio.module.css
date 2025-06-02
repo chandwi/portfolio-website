@@ -1,0 +1,401 @@
+.portfolio {
+  background-color: var(--white);
+  padding: 80px 0;
+}
+
+.portfolioContainer {
+  max-width: 1200px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin-bottom: 40px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filterButton {
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: var(--dark);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+ color: black;
+}
+
+.filterButton.active {
+
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.projectCard {
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.projectContent {
+  margin-bottom: 20px;
+}
+
+.projectTitle {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.projectDescription {
+  color: var(--dark);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: var(--white);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.projectLink {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+  border: none; 
+  background-color: var(--light);
+ 
+}
+
+.projectLink:hover {
+  color: #dd0085;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.3rem;
+  }
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover .projectImage img {
+  transform: scale(1.05);
+}
+
+.noProjects {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: var(--dark);
+  opacity: 0.7;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modalImage {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.modalTags {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.modalTags span {
+  background: var(--light);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.fullDescription {
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+.projectDate {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.projectModal {
+  position: relative;
+  background: var(--white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+  display: flex;
+  width: 70vw;
+  max-height: 70vh;
+}
+
+.modalContent {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalHeader h2 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.toolsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.toolTag {
+  background: var(--secondary);
+  color: var(--dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metricCard {
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.metricLabel {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.metricValue {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.notebookBtn {
+  background-color: var(--primary);
+  color: white;
+}
+
+.reportBtn {
+  background-color: var(--accent);
+  color: white;
+}
+
+.datasetBtn {
+  background-color: var(--dark);
+  color: white;
+}
+
+.actionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.screenshotSection {
+  width: 40%;
+  padding: 2rem;
+  background-color: var(--light);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.screenshotPlaceholder {
+  background-color: var(--white);
+  border: 1px dashed var(--primary);
+  border-radius: 8px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  overflow: hidden;
+}
+
+.screenshotImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

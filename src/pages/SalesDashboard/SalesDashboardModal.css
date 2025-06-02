@@ -1,0 +1,174 @@
+:root {
+  --primary: #0A9396;
+  --secondary: #FFD6A5;
+  --accent: #f48fb1;
+  --dark: #212529;
+  --light: #F8F9FA;
+  --white: #FFFFFF;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 15vh;
+  padding-left: 30vw;
+}
+
+.project-modal {
+  position: relative;
+  background: var(--white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px 0 0 0;
+  overflow: hidden;
+  display: flex;
+  width: 70vw;
+  height: 70vh;
+}
+
+.modal-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tool-tag {
+  background: var(--secondary);
+  color: var(--dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-card {
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.metric-label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.metric-value {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.notebook-btn {
+  background-color: var(--primary);
+  color: white;
+}
+
+.report-btn {
+  background-color: var(--accent);
+  color: white;
+}
+
+.dataset-btn {
+  background-color: var(--dark);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.screenshot-section {
+  width: 40%;
+  padding: 2rem;
+  background-color: var(--light);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.screenshot-placeholder {
+  background-color: var(--white);
+  border: 1px dashed var(--primary);
+  border-radius: 8px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}

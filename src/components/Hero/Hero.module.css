@@ -1,0 +1,136 @@
+:root {
+  --primary: #fce4ec;
+  --light: #fff0f5;
+  --dark: #333;
+  --accent: #f48fb1; /* pastel pink/coral */
+  --btn-hover: #f06292;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--primary), var(--light));
+  padding: 20px;
+}
+
+.heroContainer {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.heroContent {
+  margin-bottom: 40px;
+}
+
+.avatarContainer {
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.avatarContainer:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.heroTitle span {
+  color: #fce4ec;
+}
+
+.heroSubtitle {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnPrimary {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btnPrimary:hover {
+  background-color: var(--btn-hover);
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  background-color: #444;
+  color: white;
+}
+
+.btnSecondary:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 640px) {
+  .heroButtons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.6rem;
+  }
+}
+
+/* Particles animation 
+.particlesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  background: var(--primary);
+  border-radius: 50%;
+  filter: blur(1px);
+  will-change: transform;
+}*/
+

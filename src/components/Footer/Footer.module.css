@@ -1,0 +1,106 @@
+.footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 60px 0 20px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footerAbout {
+  max-width: 350px;
+}
+
+.footerTitle {
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.footerText {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.footerLinks h4,
+.footerContact h4 {
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.linksList {
+  list-style-type: none;
+}
+
+.linksList li {
+  margin-bottom: 12px;
+}
+
+.linksList a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linksList a:hover {
+  color: var(--accent);
+}
+
+.contactEmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactEmail:hover {
+  color: var(--accent);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLinks a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--accent);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .footerContent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footerBottom {
+    text-align: left;
+  }
+}
