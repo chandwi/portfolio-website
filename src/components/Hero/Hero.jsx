@@ -4,12 +4,12 @@ import { FaGithub, FaDownload } from 'react-icons/fa';
 import styles from './Hero.module.css';
 
 const cloudsData = [
-  { src: '/cloud1.svg', top: '10%', size: 400, opacity: 0.5, speed: 0.02 },
-  { src: '/cloud2.svg', top: '30%', size: 500, opacity: 0.7, speed: 0.03 },
-  { src: '/cloud3.svg', top: '60%', size: 650, opacity: 0.4, speed: 0.015 },
-
+  { src: '/cloud1.svg', top: '10%', size: 400, opacity: 0.2, speed: 0.02, left: 0 },
+  { src: '/cloud4.svg', top: '3%', size: 280, opacity: 0.3, speed: 0.01, left: 30 },
+  { src: '/cloud2.svg', top: '30%', size: 500, opacity: 0.1, speed: 0.003, left: 60 },
+  { src: '/cloud3.svg', top: '60%', size: 650, opacity: 0.2, speed: 0.015, left: 0 },
   { src: '/cloud5.svg', top: '90%', size: 500, opacity: 0.6, speed: 0.025 },
-  { src: '/cloud6.svg', top: '100%', size: 30, opacity: 0.6, speed: 0.025 },
+  { src: '/cloud6.svg', top: '90%', size: 300, opacity: 0.5, speed: 0.025 },
 ];
 
 const Hero = () => {
