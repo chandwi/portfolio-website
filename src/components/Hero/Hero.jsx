@@ -3,37 +3,74 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaDownload } from 'react-icons/fa';
 import styles from './Hero.module.css';
 
+const cloudsData = [
+  { src: '/src/assets/cloud1.svg', top: '10%', size: 400, opacity: 0.5, speed: 0.02 },
+  { src: '/src/assets/cloud2.svg', top: '30%', size: 500, opacity: 0.7, speed: 0.03 },
+  { src: '/src/assets/cloud3.svg', top: '60%', size: 650, opacity: 0.4, speed: 0.015 },
+
+  { src: '/src/assets/cloud5.svg', top: '90%', size: 500, opacity: 0.6, speed: 0.025 },
+  { src: '/src/assets/cloud6.svg', top: '100%', size: 30, opacity: 0.6, speed: 0.025 },
+];
+
 const Hero = () => {
-  const [particles, setParticles] = useState([]);
+  const [cloudOffsets, setCloudOffsets] = useState(cloudsData.map(() => 0));
+  const [mouseX, setMouseX] = useState(0);
 
+  // Animate clouds horizontally and respond to mouse movement
   useEffect(() => {
-    // Create floating particles
-    const newParticles = Array.from({ length: 15 }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 10 + 5,
-      speed: Math.random() * 0.5 + 0.1,
-    }));
-    setParticles(newParticles);
+    let animationFrame;
+    let lastTimestamp = performance.now();
 
-    // Animation loop
-    const animate = () => {
-      setParticles((prev) =>
-        prev.map((p) => ({
-          ...p,
-          y: (p.y + p.speed) % 100,
-        }))
+    const animate = (timestamp) => {
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+      setCloudOffsets((prev) =>
+        prev.map((offset, i) => {
+          // Move clouds, add mouseX effect
+          const baseMove = cloudsData[i].speed * delta * 0.05;
+          const mouseMove = (mouseX - 0.5) * 30 * cloudsData[i].speed;
+          return (offset + baseMove + mouseMove) % window.innerWidth;
+        })
       );
-      requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
     };
-    animate();
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [mouseX]);
+
+  // Track mouse movement
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMouseX(e.clientX / window.innerWidth);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-
-    
     <section className={styles.hero}>
+      {/* Clouds */}
+      <div className={styles.cloudsContainer}>
+        {cloudsData.map((cloud, i) => (
+          <img
+            key={i}
+            src={cloud.src}
+            alt="cloud"
+            style={{
+              position: 'absolute',
+              left: `${cloudOffsets[i]}px`,
+              top: cloud.top,
+              width: cloud.size,
+              opacity: cloud.opacity,
+              pointerEvents: 'none',
+              transition: 'opacity 0.3s',
+              zIndex: 1,
+            }}
+            className={styles.cloud}
+          />
+        ))}
+      </div>
        
 
       <div className={`container ${styles.heroContainer}`}>

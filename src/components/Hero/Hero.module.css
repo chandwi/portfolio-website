@@ -134,3 +134,24 @@
   will-change: transform;
 }*/
 
+.cloudsContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.cloud {
+  will-change: transform;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.heroContainer {
+  position: relative;
+  z-index: 2; /* Content above clouds */
+}
