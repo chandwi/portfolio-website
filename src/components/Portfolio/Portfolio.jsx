@@ -38,15 +38,11 @@ const projectsData = [
     category: 'data',
     description: 'Interactive dashboard for Retail Store Sales',
     tags: ['Python', 'Power BI', 'EDA', 'Time-Series Analysis'],
-    image: 'src/assets/Superstore Sales Dashboard_page-0001.jpg',
+    image: 'Superstore Sales Dashboard_page-0001.jpg',
+    notebook: '/superstore_sales_analysis.ipynb',
+    report: '/report1.pdf',
+    dataset: 'https://www.kaggle.com/datasets/vivek468/superstore-dataset-final/data',
     slug: 'customer-segmentation',
-    // Additional data for the modal
-    metrics: {
-      revenue: '$2.25M',
-      transactions: '9,789',
-      conversion: '3.96%',
-      customers: '23,012'
-    },
     tools: ['Power BI', 'SQL', 'Python', 'Data Modeling'],
     summary: 'Interactive sales dashboard tracking $2.25M in revenue across 9,789 transactions. The dashboard provides insights into customer behavior, sales trends, and product performance with a 3.96% conversion rate.'
   },
@@ -103,38 +99,17 @@ const SalesDashboardModal = ({ project, onClose }) => {
             </div>
           </div>
           
-          {/* Key Metrics Section */}
-          <div className={styles.section}>
-            <h3>Key Metrics</h3>
-            <div className={styles.metricsGrid}>
-              <div className={styles.metricCard}>
-                <p className={styles.metricLabel}>Total Revenue</p>
-                <p className={styles.metricValue}>{project.metrics.revenue}</p>
-              </div>
-              <div className={styles.metricCard}>
-                <p className={styles.metricLabel}>Transactions</p>
-                <p className={styles.metricValue}>{project.metrics.transactions}</p>
-              </div>
-              <div className={styles.metricCard}>
-                <p className={styles.metricLabel}>Conversion Rate</p>
-                <p className={styles.metricValue}>{project.metrics.conversion}</p>
-              </div>
-              <div className={styles.metricCard}>
-                <p className={styles.metricLabel}>Customers</p>
-                <p className={styles.metricValue}>{project.metrics.customers}</p>
-              </div>
-            </div>
-          </div>
+          
           
           {/* Action Buttons */}
           <div className={styles.actionButtons}>
-            <a href="#" className={`${styles.actionBtn} ${styles.notebookBtn}`}>
+            <a href={project.notebook} className={`${styles.actionBtn} ${styles.notebookBtn}`} download>
               View Notebook
             </a>
-            <a href="#" className={`${styles.actionBtn} ${styles.reportBtn}`}>
+            <a href={project.report} className={`${styles.actionBtn} ${styles.reportBtn}`} download>
               View Report (PDF)
             </a>
-            <a href="#" className={`${styles.actionBtn} ${styles.datasetBtn}`}>
+            <a href={project.dataset} className={`${styles.actionBtn} ${styles.datasetBtn}`} target="_blank" rel="noopener noreferrer">
               View Dataset
             </a>
           </div>

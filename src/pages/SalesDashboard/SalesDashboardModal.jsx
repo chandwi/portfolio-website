@@ -32,39 +32,27 @@ const SalesDashboardModal = ({ onClose }) => {
               <span className="tool-tag">Data Modeling</span>
             </div>
           </div>
-          
-          {/* Key Metrics Section */}
           <div className="section">
-            <h3>Key Metrics</h3>
-            <div className="metrics-grid">
-              <div className="metric-card">
-                <p className="metric-label">Total Revenue</p>
-                <p className="metric-value">$2.25M</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-label">Transactions</p>
-                <p className="metric-value">9,789</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-label">Conversion Rate</p>
-                <p className="metric-value">3.96%</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-label">Customers</p>
-                <p className="metric-value">23,012</p>
-              </div>
-            </div>
+            <h3>Insights</h3>
+            <p>
+              The sales dashboard offers a comprehensive view of key performance indicators, enabling data-driven decision-making.
+            </p>
           </div>
-          
+
           {/* Action Buttons */}
           <div className="action-buttons">
-            <a href="#" className="action-btn notebook-btn">
+            <a href="/superstore_sales_analysis.ipynb" className="action-btn notebook-btn" download>
               View Notebook
             </a>
-            <a href="#" className="action-btn report-btn">
+            <a href="/report1.pdf" className="action-btn report-btn" download> 
               View Report (PDF)
             </a>
-            <a href="#" className="action-btn dataset-btn">
+            <a
+              href="https://www.kaggle.com/datasets/vivek468/superstore-dataset-final/data"
+              className="action-btn dataset-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Dataset
             </a>
           </div>
