@@ -27,18 +27,13 @@ const SalesDashboardModal = ({ onClose }) => {
             <h3>Tools Used</h3>
             <div className="tools-container">
               <span className="tool-tag">Power BI</span>
-              <span className="tool-tag">SQL</span>
+              <span className="tool-tag">Jupyter Notebook</span>
               <span className="tool-tag">Python</span>
               <span className="tool-tag">Data Modeling</span>
             </div>
           </div>
-          <div className="section">
-            <h3>Insights</h3>
-            <p>
-              The sales dashboard offers a comprehensive view of key performance indicators, enabling data-driven decision-making.
-            </p>
-          </div>
-
+          
+          
           {/* Action Buttons */}
           <div className="action-buttons">
             <a href="/superstore_sales_analysis.ipynb" className="action-btn notebook-btn" download>
